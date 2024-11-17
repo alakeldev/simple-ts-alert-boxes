@@ -1,0 +1,33 @@
+$borderColor: rgba(255, 25, 0 , 0.322);
+$errorBg: rgb(192, 29, 29, 0.15);
+
+.alert-danger {
+    border: 2px dotted $borderColor;
+    border-radius: 0.8rem;
+    padding: 1.3rem;
+    background-color: $errorBg;
+    color: white;
+
+    .alert-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            display: flex;
+            align-items: center;
+            padding: 1px;
+
+            h4 {
+                padding-left: 15px;
+            }
+        }
+    }
+
+    p {
+        margin-top: 1.2 rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+        margin-top: 1.2rem;
+    }
+}
