@@ -1,32 +1,34 @@
 import "./index.scss";
 import { X } from 'lucide-react';
 import { ReactNode } from "react";
+import { AlertTypes } from "../../../types";
 
 interface IProps {
-  type: string;
+  type: AlertTypes;
   icon: ReactNode;
   title: string;
-  description: string;
-
+  description?: string;
+  children?: ReactNode;
 }
 
 
-const Alert = ({type, icon, title, description}: IProps) => {
+const Alert = ({type, icon, title, description, children}: IProps) => {
   return (
-    <div className={type}>
-      <div className="alert-header">
-        <div className="title">
-          {icon}
-          <h4>{title}</h4>
+    <div>
+      <div className={type}>
+        <div className="alert-header">
+          <div className="title">
+            {icon}
+            <h4>{title}</h4>
+          </div>
+          <span>
+            <X />
+          </span>
         </div>
-        <span>
-          <X />
-        </span>
+        {children ? children : <p>{description}</p>}
       </div>
-      <p>
-        {description}
-      </p>
     </div>
+
   )
 }
 
